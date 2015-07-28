@@ -1,0 +1,73 @@
+﻿<Window x:Class="BookstoreWPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bookstore GUI" Height="557.6" Width="753" Background="White" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,3.6">
+        <DataGrid x:Name="datagrid" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" Height="200" Width="719" SelectionChanged="datagrid_SelectionChanged"/>
+        <GroupBox x:Name="grpboxFilter" Header="Filter Options" HorizontalAlignment="Left" Margin="190,10,0,0" VerticalAlignment="Top" Height="121" Width="539">
+            <Grid Margin="0,0,6,-2.8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="48*"/>
+                    <ColumnDefinition Width="341*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="lblCity" Content="City" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6,-1,0,0" Width="55"/>
+                <ComboBox x:Name="cboxCity" HorizontalAlignment="Left" VerticalAlignment="Top" Width="128" Margin="6,21,0,0" MinHeight="22.4" SelectedIndex="0" SelectionChanged="Filter_SelectionChanged" Grid.ColumnSpan="2"/>
+                <Label x:Name="lblState" Content="State" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75.8,-1,0,0" Width="55" Grid.Column="1"/>
+                <ComboBox x:Name="cboxState" HorizontalAlignment="Left" VerticalAlignment="Top" Width="45" Margin="75.8,21,0,0" MinHeight="22.4" SelectedIndex="0" SelectionChanged="Filter_SelectionChanged" Grid.Column="1"/>
+                <Label x:Name="lblAuthor" Content="Author" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="129,-1,0,0" Grid.Column="1"/>
+                <ComboBox x:Name="cboxAuthor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Margin="129,21,0,0" MinHeight="22.4" SelectedIndex="0" SelectionChanged="Filter_SelectionChanged" Grid.Column="1"/>
+                <Label x:Name="lblGenre" Content="Genre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="232,-1,0,0" Grid.Column="1"/>
+                <ComboBox x:Name="cboxGenre" HorizontalAlignment="Left" VerticalAlignment="Top" Width="97" Margin="232,21,0,0" MinHeight="22.4" SelectedIndex="0" SelectionChanged="Filter_SelectionChanged" Grid.Column="1"/>
+                <Label x:Name="lblCover" Content="Cover" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="335,-1,0,0" Grid.Column="1"/>
+                <ComboBox x:Name="cboxCover" HorizontalAlignment="Left" VerticalAlignment="Top" Width="53" Margin="335,21,0,0" MinHeight="22.4" SelectedIndex="0" SelectionChanged="Filter_SelectionChanged" Grid.Column="1"/>
+                <Label x:Name="lblMoney" Content="$" Grid.Column="1" HorizontalAlignment="Left" Margin="199.8,60,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblPrice" Content="Price" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="214.8,41,0,0" Grid.Column="1"/>
+                <TextBox x:Name="txtboxPrice" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="214.8,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextChanged="txtboxFilter_TextChanged"/>
+                <Label x:Name="lblPages" Content="Pages" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="305.8,41,0,0" Grid.Column="1" RenderTransformOrigin="0.5,0.5"/>
+                <TextBox x:Name="txtboxPages" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="306.8,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextChanged="txtboxFilter_TextChanged"/>
+                <GroupBox x:Name="grpboxRating" Header="Rating" HorizontalAlignment="Left" Margin="6,45,0,0" VerticalAlignment="Top" Height="47" Width="253" Grid.ColumnSpan="2">
+                    <Grid>
+                        <RadioButton x:Name="rbtn1" GroupName="Platform" Content="1" HorizontalAlignment="Left" Height="17" Margin="48,5,0,0" VerticalAlignment="Top" Width="25" FontSize="11" Checked="Rating_CheckChanged"/>
+                        <RadioButton x:Name="rbtn2" GroupName="Platform" Content="2" HorizontalAlignment="Left" Height="17" Margin="89,5,0,0" VerticalAlignment="Top" Width="25" FontSize="11" Checked="Rating_CheckChanged"/>
+                        <RadioButton x:Name="rbtn3" GroupName="Platform" Content="3" HorizontalAlignment="Left" Height="17" Margin="131,5,0,0" VerticalAlignment="Top" Width="25" FontSize="11" Checked="Rating_CheckChanged"/>
+                        <RadioButton x:Name="rbtn4" GroupName="Platform" Content="4" HorizontalAlignment="Left" Height="17" Margin="171,5,0,0" VerticalAlignment="Top" Width="24" FontSize="11" Checked="Rating_CheckChanged"/>
+                        <RadioButton x:Name="rbtn5" GroupName="Platform" Content="5" HorizontalAlignment="Left" Height="17" Margin="210,5,0,0" VerticalAlignment="Top" Width="25" FontSize="11" Checked="Rating_CheckChanged"/>
+                        <CheckBox x:Name="chkboxLeast" Content="&gt;=" HorizontalAlignment="Left" Margin="3,4,0,0" VerticalAlignment="Top" Checked="chkboxLeast_CheckChanged" Unchecked="chkboxLeast_CheckChanged"/>
+                    </Grid>
+                </GroupBox>
+                <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="401.8,41,0,0" VerticalAlignment="Top" Width="50" Height="18" FontSize="10" Click="btnReset_Click" Grid.Column="1"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="grpboxModify" Header="Modify Options" HorizontalAlignment="Left" Margin="10,341,0,0" VerticalAlignment="Top" Height="175" Width="479">
+            <Grid Margin="0,0,-1.8,-0.2">
+                <Label x:Name="lblNewTitle" Content="Title" HorizontalAlignment="Left" Margin="17,19,0,0" VerticalAlignment="Top" FontSize="11"/>
+                <TextBox x:Name="txtboxNewTitle" HorizontalAlignment="Left" Height="23" Margin="52,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <Label x:Name="lblNewAuthor" Content="Author" HorizontalAlignment="Left" Margin="4,49,0,0" VerticalAlignment="Top" FontSize="11"/>
+                <TextBox x:Name="txtboxNewAuthor" HorizontalAlignment="Left" Height="23" Margin="52,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" LostFocus="NewAuthor_TextCheck"/>
+                <Label x:Name="lblNewPages" Content="Pages" HorizontalAlignment="Left" Margin="9,77,0,0" VerticalAlignment="Top" FontSize="11"/>
+                <TextBox x:Name="txtboxNewPages" HorizontalAlignment="Left" Height="23" Margin="52,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" TextChanged="txtboxModify_TextChanged"/>
+                <Label x:Name="lblNewPrice" Content="Price ($)" HorizontalAlignment="Left" Margin="103,77,0,0" VerticalAlignment="Top" FontSize="11"/>
+                <TextBox x:Name="txtboxNewPrice" HorizontalAlignment="Left" Height="23" Margin="153,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" TextChanged="txtboxModify_TextChanged"/>
+                <Label x:Name="lblNewGenre" Content="Genre" HorizontalAlignment="Left" Margin="221,18,0,0" VerticalAlignment="Top" FontSize="11"/>
+                <ComboBox x:Name="cboxNewGenre" HorizontalAlignment="Left" Margin="261,18,0,0" VerticalAlignment="Top" Width="123" Height="23"/>
+                <Label x:Name="lblNewCity" Content="City" HorizontalAlignment="Left" Margin="231,47,0,0" VerticalAlignment="Top" FontSize="11"/>
+                <ComboBox x:Name="cboxNewCity" HorizontalAlignment="Left" Margin="262,47,0,0" VerticalAlignment="Top" Width="128"/>
+                <Label x:Name="lblNewRating" Content="Rating" HorizontalAlignment="Left" Margin="219,77,0,0" VerticalAlignment="Top" FontSize="11"/>
+                <ComboBox x:Name="cboxNewRating" HorizontalAlignment="Left" Margin="261,78,0,0" VerticalAlignment="Top" Width="43"/>
+                <Label x:Name="lblNewCover" Content="Cover" HorizontalAlignment="Left" Margin="309,77,0,0" VerticalAlignment="Top" FontSize="11"/>
+                <ComboBox x:Name="cboxNewCover" HorizontalAlignment="Left" Margin="351,78,0,0" VerticalAlignment="Top" Width="53"/>
+                <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="221,121,0,0" VerticalAlignment="Top" Width="75" Click="btnCreate_Click"/>
+                <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="301,121,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="381,120,0,0" VerticalAlignment="Top" Width="75" Click="btnDelete_Click"/>
+                <Button x:Name="btnDeselect" Content="Deselect" HorizontalAlignment="Left" Margin="96,-13,0,0" VerticalAlignment="Top" Width="53" FontSize="10" Height="20" Grid.ColumnSpan="4" Click="btnDeselect_Click"/>
+            </Grid>
+        </GroupBox>
+        <TextBox x:Name="txtboxLog" HorizontalAlignment="Left" Height="149" Margin="513,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="#FFE3E9EF"/>
+        <GroupBox x:Name="grpboxFile" Header="File Options" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="121" Width="89">
+            <Grid>
+                <Button x:Name="btnSave" Content="Save Log" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click"/>
+                <Button x:Name="btnClear" Content="Clear Log" HorizontalAlignment="Left" Margin="0,37,0,0" VerticalAlignment="Top" Width="75" Click="btnClear_Click"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

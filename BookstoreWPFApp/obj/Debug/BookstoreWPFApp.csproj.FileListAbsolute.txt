@@ -1,0 +1,16 @@
+c:\users\byron\documents\visual studio 2013\Projects\BookstoreSolution\BookstoreWPFApp\bin\Debug\BookstoreWPFApp.exe.config
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\bin\Debug\BookstoreWPFApp.exe.config
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\obj\Debug\BookstoreWPFApp.csprojResolveAssemblyReference.cache
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\obj\Debug\MainWindow.baml
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\obj\Debug\MainWindow.g.cs
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\obj\Debug\App.g.cs
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\obj\Debug\BookstoreWPFApp_MarkupCompile.cache
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\obj\Debug\BookstoreWPFApp.g.resources
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\obj\Debug\BookstoreWPFApp.Properties.Resources.resources
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\obj\Debug\BookstoreWPFApp.csproj.GenerateResource.Cache
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\bin\Debug\BookstoreWPFApp.exe
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\bin\Debug\BookstoreWPFApp.pdb
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\obj\Debug\BookstoreWPFApp.exe
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\obj\Debug\BookstoreWPFApp.pdb
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Byron\Documents\Visual Studio 2013\Projects\Bookstore\BookstoreWPFApp\bin\Debug\Newtonsoft.Json.xml
